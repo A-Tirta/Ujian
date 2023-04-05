@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model MataPelajaran {
+  id Int @id @db.Int @default(autoincrement())
+  create_at DateTime @db.DateTime(0) @default(now())
+  update_at DateTime @db.DateTime(0) @updatedAt
+  
+  mata_pelajaran String @db.VarChar(50)
+
+  soal Soal[]
+}
+
+model Soal {
+  id Int @id @db.Int @default(autoincrement()) 
+  create_at DateTime @db.DateTime(0) @default(now())
+  update_at DateTime @db.DateTime(0) @updatedAt
+
+  soal String @db.Text
+  
+  pilihan_ganda PilihanGanda?
+  jawaban Jawaban?
+  
+  matapelajaran_id MataPelajaran @relation(fields: [MataPelajaranId], references: [id])
+  MataPelajaranId Int
+}
+
+model PilihanGanda {
+  id Int @id @db.Int @default(autoincrement()) 
+  create_at DateTime @db.DateTime(0) @default(now())
+  update_at DateTime @db.DateTime(0) @updatedAt
+
+  pilihan_A String @db.VarChar(15)
+  pilihan_B String @db.VarChar(15)
+  pilihan_C String @db.VarChar(15)
+  pilihan_D String @db.VarChar(15)
+
+  soal_id Soal @relation(fields: [SoalId], references: [id])
+  SoalId Int @unique
+}
+
+model Jawaban {
+  id Int @id @db.Int @default(autoincrement()) 
+  create_at DateTime @db.DateTime(0) @default(now())
+  update_at DateTime @db.DateTime(0) @updatedAt
+
+  jawaban String @db.VarChar(15)
+
+  soal_id Soal @relation(fields: [SoalId], references: [id])
+  SoalId Int @unique
+}
