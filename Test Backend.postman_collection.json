@@ -1,0 +1,694 @@
+{
+	"info": {
+		"_postman_id": "bde19a73-e00d-4e10-ba74-60b146be3d19",
+		"name": "Test Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MataPelajaran",
+			"item": [
+				{
+					"name": "Tambah Pelajaran",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mata_pelajaran\": \"bahasa indonesia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/matapelajaran/buat_pelajaran/",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"matapelajaran",
+								"buat_pelajaran",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ubah Mata Pelajaran",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mata_pelajaran\": \"IPA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/matapelajaran/:id_ubah_pelajaran/",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"matapelajaran",
+								":id_ubah_pelajaran",
+								""
+							],
+							"variable": [
+								{
+									"key": "id_ubah_pelajaran",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASEURL}}/matapelajaran/:id",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"matapelajaran",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/matapelajaran/",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"matapelajaran",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/matapelajaran/:id",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"matapelajaran",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Soal",
+			"item": [
+				{
+					"name": "Tambah Soal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"soal\": \"Apa saja yang termasuk binatang\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/soal/:id_mata_pelajaran",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"soal",
+								":id_mata_pelajaran"
+							],
+							"variable": [
+								{
+									"key": "id_mata_pelajaran",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ubah Soal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"soal\": \"Apa saja yang bukan termasuk binatang\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/soal/:id_ubah_soal",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"soal",
+								":id_ubah_soal"
+							],
+							"variable": [
+								{
+									"key": "id_ubah_soal",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASEURL}}/soal/:id_hapus",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"soal",
+								":id_hapus"
+							],
+							"variable": [
+								{
+									"key": "id_hapus",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/soal/",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"soal",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/soal/:id",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"soal",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pilihan Ganda",
+			"item": [
+				{
+					"name": "Tambah Pilihan Ganda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pilihan_A\" : \"Hiu\",\r\n    \"pilihan_B\" : \"Gajah\",\r\n    \"pilihan_C\" : \"Harimau\",\r\n    \"pilihan_D\" : \"Apel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/pilihanganda/:id_soal",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"pilihanganda",
+								":id_soal"
+							],
+							"variable": [
+								{
+									"key": "id_soal",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ubah Pilihan Ganda",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pilihan_A\" : \"Hiu\",\r\n    \"pilihan_B\" : \"Gajah\",\r\n    \"pilihan_C\" : \"Harimau\",\r\n    \"pilihan_D\" : \"Apel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/pilihanganda/:id_ubah_Pilihan_Ganda",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"pilihanganda",
+								":id_ubah_Pilihan_Ganda"
+							],
+							"variable": [
+								{
+									"key": "id_ubah_Pilihan_Ganda",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASEURL}}/pilihanganda/:id_hapus",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"pilihanganda",
+								":id_hapus"
+							],
+							"variable": [
+								{
+									"key": "id_hapus",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/pilihanganda/",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"pilihanganda",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/pilihanganda/:id",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"pilihanganda",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jawaban",
+			"item": [
+				{
+					"name": "Tambah Jawaban",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jawaban\" : \"D\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/jawaban/:id_soal",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"jawaban",
+								":id_soal"
+							],
+							"variable": [
+								{
+									"key": "id_soal",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ubah Jawaban",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jawaban\" : \"D\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/jawaban/:id_ubah_Jawaban",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"jawaban",
+								":id_ubah_Jawaban"
+							],
+							"variable": [
+								{
+									"key": "id_ubah_Jawaban",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASEURL}}/jawaban/:id",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"jawaban",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/jawaban/",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"jawaban",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/jawaban/:id",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"jawaban",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Check Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASEURL}}/status/",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"status",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASEURL",
+			"value": "http://localhost:4000",
+			"type": "default"
+		}
+	]
+}
